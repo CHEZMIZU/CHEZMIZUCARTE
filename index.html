@@ -1,60 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chez Mizu Restaurant Menu</title>
+    <title>Menu Chez Mizu</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .menu-item { margin: 20px; padding: 10px; border: 1px solid #ccc; }
-        .cart { margin-top: 40px; }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        #menu {
+            width: 250px;
+            background: #f4f4f4;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        #cart {
+            width: 250px;
+            background: #fff;
+            padding: 20px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+        #content {
+            flex: 1;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
     </style>
 </head>
 <body>
-    <h1>Chez Mizu Restaurant Menu</h1>
     <div id="menu">
-        <div class="menu-item" data-name="Sushi" data-price="12.99">
-            <h2>Sushi</h2>
-            <p>Fresh sushi rolls.</p>
-            <button onclick="addToCart('Sushi', 12.99)">Add to Cart</button>
-        </div>
-        <div class="menu-item" data-name="Ramen" data-price="10.99">
-            <h2>Ramen</h2>
-            <p>Delicious ramen soups.</p>
-            <button onclick="addToCart('Ramen', 10.99)">Add to Cart</button>
-        </div>
-        <div class="menu-item" data-name="Bento Box" data-price="15.99">
-            <h2>Bento Box</h2>
-            <p>A variety of dishes.</p>
-            <button onclick="addToCart('Bento Box', 15.99)">Add to Cart</button>
+        <h2>Menu</h2>
+        <h3>Soupes & Salades</h3>
+        <ul>
+            <li>Soupe Miso</li>
+            <li>Salade Wakame</li>
+            <!-- Add additional soup and salad items here -->
+        </ul>
+        <h3>Riz</h3>
+        <ul>
+            <li>Riz Nature</li>
+            <li>Riz Sauté aux Légumes</li>
+            <!-- Add additional rice items here -->
+        </ul>
+        <h3>Entrées</h3>
+        <ul>
+            <li>Nem</li>
+            <li>Gyoza</li>
+            <!-- Add additional entrée items here -->
+        </ul>
+        <h3>Sushis & Sashimis</h3>
+        <ul>
+            <li>Sushi Poisson</li>
+            <li>Sashimi Saumon</li>
+            <!-- Add additional sushi and sashimi items here -->
+        </ul>
+        <h3>Makis</h3>
+        <ul>
+            <li>Maki Thon</li>
+            <li>Maki Avocat</li>
+            <!-- Add additional maki items here -->
+        </ul>
+        <h3>California</h3>
+        <ul>
+            <li>California Roll</li>
+            <!-- Add additional California items here -->
+        </ul>
+        <h3>Menus japonais</h3>
+        <ul>
+            <li>Menu Sushis</li>
+            <!-- Add additional Japanese menu items here -->
+        </ul>
+        <h3>Menus chinois</h3>
+        <ul>
+            <li>Menu Chinois</li>
+            <!-- Add additional Chinese menu items here -->
+        </ul>
+        <h3>Bo Bun</h3>
+        <ul>
+            <li>Bo Bun au Boeuf</li>
+            <!-- Add additional Bo Bun items here -->
+        </ul>
+        <h3>Nouilles sautées</h3>
+        <ul>
+            <li>Nouilles Sautées aux Légumes</li>
+            <!-- Add additional fried noodle items here -->
+        </ul>
+        <h3>Plats chinois</h3>
+        <ul>
+            <li>Canard laqué</li>
+            <!-- Add additional Chinese dish items here -->
+        </ul>
+        <div id="cart">
+            <h2>Panier</h2>
+            <ul id="cart-items"></ul>
+            <button onclick="checkout()">Commander</button>
         </div>
     </div>
-    <div class="cart">
-        <h2>Shopping Cart</h2>
-        <ul id="cart-items"></ul>
-        <p>Total: $<span id="total">0.00</span></p>
+    <div id="content">
+        <h1>Bienvenue Chez Mizu</h1>
+        <p>Découvrez notre menu varié !</p>
     </div>
-
     <script>
-        let cart = [];
-        let total = 0;
-
-        function addToCart(name, price) {
-            cart.push({name, price});
-            total += price;
+        const cart = [];
+        function addToCart(item) {
+            cart.push(item);
             updateCart();
+            localStorage.setItem('cart', JSON.stringify(cart));
         }
-
         function updateCart() {
             const cartItems = document.getElementById('cart-items');
             cartItems.innerHTML = '';
-            for (const item of cart) {
+            cart.forEach(item => {
                 const li = document.createElement('li');
-                li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                li.textContent = item;
                 cartItems.appendChild(li);
-            }
-            document.getElementById('total').textContent = total.toFixed(2);
+            });
         }
+        function checkout() {
+            alert('Merci pour votre commande !');
+        }
+        window.onload = function() {
+            const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+            savedCart.forEach(item => addToCart(item));
+        };
     </script>
 </body>
 </html>
