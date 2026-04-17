@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chez Mizu Restaurant Menu</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .menu-item { margin: 20px; padding: 10px; border: 1px solid #ccc; }
+        .cart { margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <h1>Chez Mizu Restaurant Menu</h1>
+    <div id="menu">
+        <div class="menu-item" data-name="Sushi" data-price="12.99">
+            <h2>Sushi</h2>
+            <p>Fresh sushi rolls.</p>
+            <button onclick="addToCart('Sushi', 12.99)">Add to Cart</button>
+        </div>
+        <div class="menu-item" data-name="Ramen" data-price="10.99">
+            <h2>Ramen</h2>
+            <p>Delicious ramen soups.</p>
+            <button onclick="addToCart('Ramen', 10.99)">Add to Cart</button>
+        </div>
+        <div class="menu-item" data-name="Bento Box" data-price="15.99">
+            <h2>Bento Box</h2>
+            <p>A variety of dishes.</p>
+            <button onclick="addToCart('Bento Box', 15.99)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total">0.00</span></p>
+    </div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(name, price) {
+            cart.push({name, price});
+            total += price;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            for (const item of cart) {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                cartItems.appendChild(li);
+            }
+            document.getElementById('total').textContent = total.toFixed(2);
+        }
+    </script>
+</body>
+</html>
