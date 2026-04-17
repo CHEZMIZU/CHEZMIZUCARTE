@@ -4,135 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Chez Mizu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        #menu {
-            width: 250px;
-            background: #f4f4f4;
-            padding: 20px;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            overflow-y: auto;
-        }
-        #cart {
-            width: 250px;
-            background: #fff;
-            padding: 20px;
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
-        }
-        #content {
-            flex: 1;
-            padding: 20px;
-        }
-        h2 {
-            color: #333;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="menu">
-        <h2>Menu</h2>
-        <h3>Soupes & Salades</h3>
-        <ul>
-            <li>Soupe Miso</li>
-            <li>Salade Wakame</li>
-            <!-- Add additional soup and salad items here -->
+    <header>
+        <h1>Bienvenue chez Chez Mizu</h1>
+    </header>
+    <nav>
+        <ul class="sidebar-menu">
+            <li><a href="#soups-salads-rice">Soupes/Salades/Riz</a></li>
+            <li><a href="#entrees">Entrées</a></li>
+            <li><a href="#sushis-sashimis">Sushis & Sashimis</a></li>
+            <li><a href="#makis">Makis</a></li>
+            <li><a href="#california">California</a></li>
+            <li><a href="#japanese-menus">Menus Japonais</a></li>
+            <li><a href="#chinese-menus">Menus Chinois</a></li>
+            <li><a href="#bo-bun">Bo Bun</a></li>
+            <li><a href="#noodles">Nouilles sautées</a></li>
+            <li><a href="#chinese-dishes">Plats Chinois</a></li>
         </ul>
-        <h3>Riz</h3>
-        <ul>
-            <li>Riz Nature</li>
-            <li>Riz Sauté aux Légumes</li>
-            <!-- Add additional rice items here -->
-        </ul>
-        <h3>Entrées</h3>
-        <ul>
-            <li>Nem</li>
-            <li>Gyoza</li>
-            <!-- Add additional entrée items here -->
-        </ul>
-        <h3>Sushis & Sashimis</h3>
-        <ul>
-            <li>Sushi Poisson</li>
-            <li>Sashimi Saumon</li>
-            <!-- Add additional sushi and sashimi items here -->
-        </ul>
-        <h3>Makis</h3>
-        <ul>
-            <li>Maki Thon</li>
-            <li>Maki Avocat</li>
-            <!-- Add additional maki items here -->
-        </ul>
-        <h3>California</h3>
-        <ul>
-            <li>California Roll</li>
-            <!-- Add additional California items here -->
-        </ul>
-        <h3>Menus japonais</h3>
-        <ul>
-            <li>Menu Sushis</li>
-            <!-- Add additional Japanese menu items here -->
-        </ul>
-        <h3>Menus chinois</h3>
-        <ul>
-            <li>Menu Chinois</li>
-            <!-- Add additional Chinese menu items here -->
-        </ul>
-        <h3>Bo Bun</h3>
-        <ul>
-            <li>Bo Bun au Boeuf</li>
-            <!-- Add additional Bo Bun items here -->
-        </ul>
-        <h3>Nouilles sautées</h3>
-        <ul>
-            <li>Nouilles Sautées aux Légumes</li>
-            <!-- Add additional fried noodle items here -->
-        </ul>
-        <h3>Plats chinois</h3>
-        <ul>
-            <li>Canard laqué</li>
-            <!-- Add additional Chinese dish items here -->
-        </ul>
-        <div id="cart">
+    </nav>
+    <main>
+        <section id="soups-salads-rice">
+            <h2>Soupes/Salades/Riz</h2>
+            <ul>
+                <li>Soupe Miso - 4.90 €</li>
+                <li>Salade Wakame - 5.50 €</li>
+                <li>Riz Blanc - 3.00 €</li>
+                <!-- Add other items here -->
+            </ul>
+        </section>
+        <section id="entrees">
+            <h2>Entrées</h2>
+            <ul>
+                <li>Gyoza - 6.90 €</li>
+                <li>Tempura - 8.90 €</li>
+                <!-- Add other items here -->
+            </ul>
+        </section>
+        <section id="sushis-sashimis">
+            <h2>Sushis & Sashimis</h2>
+            <ul>
+                <li>Sushi Saumon - 12.00 €</li>
+                <li>Sashimi Thon - 15.00 €</li>
+                <!-- Add other items here -->
+            </ul>
+        </section>
+        <section id="makis">
+            <h2>Makis</h2>
+            <ul>
+                <li>Maki Avocat - 9.50 €</li>
+                <li>Maki Thon - 10.50 €</li>
+                <!-- Add other items here -->
+            </ul>
+        </section>
+        <section id="california">
+            <h2>California</h2>
+            <ul>
+                <li>California Saumon - 11.50 €</li>
+                <li>California Crevette - 12.50 €</li>
+                <!-- Add other items here -->
+            </ul>
+        </section>
+        <section id="japanese-menus">
+            <h2>Menus Japonais</h2>
+            <ul>
+                <li>Menu A - 19.90 €</li>
+                <li>Menu B - 15.90 €</li>  <!-- Updated price -->
+                <li>Menu C - 24.90 €</li>
+                <!-- Add other items here -->
+            </ul>
+        </section>
+        <section id="chinese-menus">
+            <h2>Menus Chinois</h2>
+            <ul>
+                <li>Menu D - 18.90 €</li>
+                <li>Menu E - 22.90 €</li>
+                <!-- Add other items here -->
+            </ul>
+        </section>
+        <section id="bo-bun">
+            <h2>Bo Bun</h2>
+            <p>Bo Bun - 12.90 €</p>
+        </section>
+        <section id="noodles">
+            <h2>Nouilles sautées</h2>
+            <p>Nouilles Sautées - 10.90 €</p>
+        </section>
+        <section id="chinese-dishes">
+            <h2>Plats Chinois</h2>
+            <ul>
+                <li>Chow Mein - 9.50 €</li>
+                <li>Riz Cantonais - 8.50 €</li>
+                <!-- Add other items here -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <div class="cart">
             <h2>Panier</h2>
-            <ul id="cart-items"></ul>
-            <button onclick="checkout()">Commander</button>
+            <div id="cart-items"></div>
+            <button id="checkout">Commander</button>
         </div>
-    </div>
-    <div id="content">
-        <h1>Bienvenue Chez Mizu</h1>
-        <p>Découvrez notre menu varié !</p>
-    </div>
-    <script>
-        const cart = [];
-        function addToCart(item) {
-            cart.push(item);
-            updateCart();
-            localStorage.setItem('cart', JSON.stringify(cart));
-        }
-        function updateCart() {
-            const cartItems = document.getElementById('cart-items');
-            cartItems.innerHTML = '';
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = item;
-                cartItems.appendChild(li);
-            });
-        }
-        function checkout() {
-            alert('Merci pour votre commande !');
-        }
-        window.onload = function() {
-            const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
-            savedCart.forEach(item => addToCart(item));
-        };
-    </script>
+    </footer>
 </body>
 </html>
+
+/* styles.css */
+body { font-family: Arial, sans-serif; }
+.sidebar-menu { list-style-type: none; padding: 0; }
+.sidebar-menu li { margin: 10px 0; }
+.cart { position: fixed; right: 20px; top: 20px; width: 200px; background: #fff; border: 1px solid #ccc; padding: 15px; }
+
+/* script.js */
+let cart = [];
+document.getElementById('checkout').addEventListener('click', function() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Votre commande a été enregistrée.');
+});
